@@ -1,0 +1,35 @@
+{
+  "name": "bvapiapp",
+  "description": "BV API Checker and Builder for Support EMEA",
+  "main": "server.js",
+  "authors": [
+    "Alexis Phanor"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/aphanor/BVApi.app",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "*.gzip",
+    "bower.json",
+    "*.md",
+    "*.json",
+    "index.js",
+    "package.js",
+    "images",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "source",
+    "spec",
+    ".bowerrc",
+    ".gitignore",
+    ".jshintignore",
+    ".jshintrc",
+    "gruntfile.js"
+  ],
+  "dependencies": {
+    "angular-bootstrap-toggle-switch": "^0.5.6"
+  }
+}

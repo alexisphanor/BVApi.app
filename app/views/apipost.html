@@ -1,0 +1,65 @@
+<div class="row">
+    <p><a ng-href="#!/bvapp/"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Back </a></p>
+    
+    <!-- *************** Sample API KEY *************** -->
+    <div class="apisample"><code>Sample staging key: kuy3zj9pr3n7i0wxajrzj04xo</code></div>
+    
+    <!-- *************** API input field *************** -->
+    <div ng-hide="formerrors" class="apicreator">
+<!--
+        <input class="form-control" type="text" ng-model="apikey" placeholder="{{apikey}}">
+        <input class="form-control" type="text" ng-model="pid" placeholder="{{pid}}">
+-->
+        <div class="inputcontainer">
+            <h4><i class="fa fa-angle-down" aria-hidden="true"></i> API Config: </h4>
+            <svg height="2" width="100%">
+                <line x1="100%" y1="0" style="stroke:#00AB8E;stroke-width:2" />
+            </svg>
+            <span class="input input--nao">
+    			<input class="input__field input__field--nao" type="text" ng-model="pid">
+    			<label class="input__label input__label--nao">
+    				<span class="input__label-content input__label-content--nao">Enter your API key here</span>
+    			</label>
+    			<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+    				<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+    			</svg>
+    		</span>
+            <span class="input input--nao">
+    			<input class="input__field input__field--nao" type="text" ng-model="apikey">
+    			<label class="input__label input__label--nao">
+    				<span class="input__label-content input__label-content--nao">Enter your ProductId here</span>
+    			</label>
+    			<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+    				<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+    			</svg>
+    		</span>
+        </div>
+        <h4><i class="fa fa-angle-down" aria-hidden="true"></i> Staging: </h4>
+        <svg height="2" width="100%">
+            <line x1="100%" y1="0" style="stroke:#00AB8E;stroke-width:2" />
+        </svg>
+        <div class="switch_button">
+            <toggle-switch on-label="YES" off-label="NO" ng-model="stg"></toggle-switch>
+        </div>
+        <div class="apibutton">
+            <button type="submit" ng-click="postAPI(apikey, pid, stg)" type="button" class="btn btn-primary btn-lg active">Post it!</button>
+        </div>
+    </div>
+    <p class="bg-danger" ng-show="errormessage">{{errormessage}}</p>
+    <!-- End - API input field -->
+    <div class="row" ng-show="formerrors">
+        <div class="col-md-4">
+            <div>
+                <label ng-repeat="(key, value) in formerrors" for="{{key}}">
+                   {{key}}
+                   <input type="input" ng-value="{{key}}" class="form-control" type="text">
+                 </label>
+            </div>
+            <br>
+            <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="reloadPage();">Reset</button>
+        </div>
+        <div class="col-md-8">
+            <pre><code class="json">{{jsonapi}}</code></pre>
+        </div>
+    </div>
+</div>
